@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 declare global {
   interface Window {
@@ -15,17 +15,18 @@ interface GoogleAnalyticsProps {
 
 const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ GA_MEASUREMENT_ID }) => {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
+    // Get search params on client side to avoid SSR issues
+    const searchParams = new URLSearchParams(window.location.search);
+    const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
 
     if (typeof window.gtag !== 'undefined') {
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_path: url,
       });
     }
-  }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+  }, [pathname, GA_MEASUREMENT_ID]);
 
   return null;
 };
