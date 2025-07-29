@@ -38,7 +38,7 @@ interface Developer {
   name: string;
   role: string;
   experience: string;
-  companies: string[];
+  companies: string;
   avatar: string;
   bio: string;
   specialties: string[];
@@ -53,35 +53,46 @@ const developers: Developer[] = [
   {
     id: 1,
     name: 'Nitin',
-    role: 'Frontend Lead',
-    experience: '7+ years',
+    role: 'Sr. Full Stack Developer',
+    experience: '2+ years',
     avatar: '/images/nitin.jpg',
-    companies: ['Banao Technologies', 'Freelance', 'Enterprise Projects'],
-    bio: 'Frontend architect with a passion for creating pixel-perfect, performant user experiences. Specializes in React ecosystems and modern web technologies.',
-    specialties: ['React Architecture', 'Performance Optimization', 'UI/UX Implementation', 'Team Leadership'],
-    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Redux', 'GraphQL', 'Webpack'],
+    companies: "3+ Companies",
+    bio: 'Senior full-stack developer with expertise in modern web technologies and scalable application architecture. Specializes in React ecosystems, Node.js backend development, and end-to-end project delivery.',
+    specialties: ['Full Stack Development', 'React Architecture', 'Node.js Backend', 'Database Design'],
+    techStack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'Express', 'Tailwind CSS', 'GraphQL'],
     phone: '+91 9876543210',
     projects: [
       {
-        name: 'E-Commerce Platform',
-        description: 'Led frontend development for a modern e-commerce solution with advanced cart functionality and payment integration.',
-        tech: ['React', 'Next.js', 'Stripe', 'Tailwind CSS'],
-        role: 'Frontend Lead',
-        status: 'Completed'
+        name: 'Betting App Demo',
+        description: 'Full-stack betting application with real-time odds, user authentication, and secure payment processing.',
+        tech: ['React', 'Next.js', 'Node.js', 'MongoDB'],
+        role: 'Sr. Full Stack Developer',
+        status: 'Launched',
+        url: 'https://betting-app-demo.vercel.app/'
       },
       {
-        name: 'SaaS Dashboard',
-        description: 'Architected and built a comprehensive analytics dashboard with real-time data visualization.',
-        tech: ['React', 'TypeScript', 'Chart.js', 'Redux'],
-        role: 'Frontend Architect',
-        status: 'Launched'
+        name: 'Captcha System',
+        description: 'Advanced CAPTCHA verification system with multiple challenge types and anti-bot protection.',
+        tech: ['React', 'Node.js', 'Canvas API', 'Express'],
+        role: 'Full Stack Developer',
+        status: 'Launched',
+        url: 'https://captcha-gules.vercel.app/'
       },
       {
-        name: 'Portfolio Template System',
-        description: 'Created a reusable portfolio template system for creative professionals.',
-        tech: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
-        role: 'Lead Developer',
-        status: 'Completed'
+        name: 'WATI Clone',
+        description: 'WhatsApp Business API integration platform with automated messaging and customer management.',
+        tech: ['React', 'Next.js', 'WhatsApp API', 'MongoDB'],
+        role: 'Sr. Full Stack Developer',
+        status: 'Launched',
+        url: 'https://wati-clone.vercel.app/'
+      },
+      {
+        name: 'Kairoshi Platform',
+        description: 'Comprehensive business management platform with analytics, reporting, and workflow automation.',
+        tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL'],
+        role: 'Sr. Full Stack Developer',
+        status: 'Launched',
+        url: 'https://kairoshi.vercel.app/'
       }
     ],
     icon: Code,
@@ -90,9 +101,9 @@ const developers: Developer[] = [
   {
     id: 2,
     name: 'Shubhanshu',
-    role: 'Full Stack Developer',
-    experience: '4+ years',
-    companies: ['NEDC', 'TLN', 'ProcurPal'],
+    role: 'Sr. Full Stack Developer',
+    experience: '2+ years',
+    companies: "6+ Companies",
     avatar: '/images/shubhanshu.png',
     bio: 'Versatile full-stack engineer who bridges frontend elegance with backend robustness. Expert in building scalable web applications from concept to deployment.',
     specialties: ['Full Stack Development', 'API Design', 'Database Architecture', 'System Integration'],
@@ -127,13 +138,13 @@ const developers: Developer[] = [
   {
     id: 3,
     name: 'Navneet Kumar',
-    role: 'Frontend Developer',
-    experience: '5+ years',
-    companies: ['Banao Technologies', 'CodeSculpt'],
+    role: 'Sr. WordPress Developer',
+    experience: '2+ years',
+    companies: "4+ Companies",
     avatar: '/images/navneet.jpg',
-    bio: 'Frontend developer specializing in modern web technologies and responsive design. Expert in creating pixel-perfect user interfaces with clean, maintainable code.',
-    specialties: ['HTML/CSS', 'JavaScript', 'WordPress Development', 'Responsive Design'],
-    techStack: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'Custom WordPress', 'Elementor'],
+    bio: 'Senior WordPress developer with extensive experience in custom theme development, plugin creation, and e-commerce solutions. Expert in creating scalable WordPress websites with advanced functionality.',
+    specialties: ['WordPress Development', 'Custom Themes', 'Plugin Development', 'E-commerce Solutions'],
+    techStack: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'Elementor', 'WooCommerce'],
     phone: '+91 8766254833',
     projects: [
       {
@@ -207,13 +218,13 @@ const developers: Developer[] = [
   {
     id: 4,
     name: 'Pradeep Mahapatra',
-    role: 'Frontend Developer',
-    experience: '6+ years',
-    companies: ['Enterprise IT', 'Freelancer'],
+    role: 'Sr. WordPress Developer',
+    experience: '2.5+ years',
+    companies: "2+ Companies",
     avatar: '/api/placeholder/150/150',
-    bio: 'Frontend developer with expertise in modern web technologies and WordPress development. Specializes in creating responsive, user-friendly websites with clean design.',
-    specialties: ['HTML/CSS', 'JavaScript', 'WordPress Development', 'Responsive Design'],
-    techStack: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'WordPress', 'Elementor'],
+    bio: 'Senior WordPress developer specializing in custom website development, theme customization, and performance optimization. Expert in creating professional WordPress solutions for businesses.',
+    specialties: ['WordPress Development', 'Theme Customization', 'Performance Optimization', 'SEO Implementation'],
+    techStack: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'Elementor', 'ACF'],
     phone: '+91 75031 77590',
     projects: [
       {
@@ -596,7 +607,7 @@ const MeetTheDevelopers = () => {
                     <p className="text-[#A0AEC0]">{selectedDev.role}</p>
                     <div className="flex items-center mt-1">
                       <Phone className="w-4 h-4 text-[#64FFDA] mr-2" />
-                      <a 
+                      <a
                         href={`tel:${selectedDev.phone}`}
                         className="text-sm text-[#64FFDA] font-medium hover:text-[#4FD1C7] transition-colors"
                       >

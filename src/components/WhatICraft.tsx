@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import {
@@ -16,14 +16,27 @@ import {
   BarChart3,
   Layers,
   Database,
-  Wifi
+  Wifi,
+  Monitor,
+  Tablet,
+  Play,
+  Search,
+  Shield,
+  Cloud,
+  Headphones,
+  Gamepad2,
+  Bot,
+  Briefcase,
+  TrendingUp,
+  Settings,
+  Rocket
 } from 'lucide-react';
 
 const services = [
   {
     id: 1,
     title: 'Landing Pages',
-    description: 'High-converting, pixel-perfect landing pages that turn visitors into customers',
+    description: 'Pixel-perfect landing pages that turn visitors into customers',
     icon: Globe,
     color: '#64FFDA',
     details: 'Optimized for conversions with A/B testing ready designs'
@@ -32,7 +45,7 @@ const services = [
     id: 2,
     title: 'Business Websites',
     description: 'Professional corporate websites that establish credibility and drive growth',
-    icon: Smartphone,
+    icon: Monitor,
     color: '#FF6B6B',
     details: 'SEO-optimized, mobile-first, and performance-focused'
   },
@@ -115,11 +128,79 @@ const services = [
     icon: Wifi,
     color: '#D7BDE2',
     details: 'Service workers, caching strategies, and native app features'
+  },
+  {
+    id: 13,
+    title: 'Mobile Applications',
+    description: 'Native and cross-platform mobile apps for iOS and Android',
+    icon: Smartphone,
+    color: '#FF6B94',
+    details: 'React Native, Flutter, and native development with app store deployment'
+  },
+  {
+    id: 14,
+    title: 'Hybrid Apps',
+    description: 'Cross-platform applications that work seamlessly on all devices',
+    icon: Tablet,
+    color: '#A8E6CF',
+    details: 'Ionic, Cordova, and PWA technologies for maximum reach'
+  },
+  {
+    id: 15,
+    title: 'App Store Optimization',
+    description: 'Complete app deployment and optimization for maximum visibility',
+    icon: Play,
+    color: '#FFB347',
+    details: 'App store listings, screenshots, keywords, and performance monitoring'
+  },
+  {
+    id: 16,
+    title: 'SEO & Digital Marketing',
+    description: 'Search engine optimization and digital marketing strategies',
+    icon: Search,
+    color: '#87CEEB',
+    details: 'Keyword research, on-page SEO, link building, and analytics tracking'
+  },
+  {
+    id: 17,
+    title: 'Security & Performance',
+    description: 'Website security audits and performance optimization',
+    icon: Shield,
+    color: '#98FB98',
+    details: 'SSL certificates, security scanning, speed optimization, and monitoring'
+  },
+  {
+    id: 19,
+    title: 'Technical Support',
+    description: '24/7 technical support and maintenance services',
+    icon: Headphones,
+    color: '#F0E68C',
+    details: 'Bug fixes, updates, backups, and ongoing technical assistance'
+  },
+  {
+    id: 21,
+    title: 'AI & Chatbots',
+    description: 'AI-powered chatbots and intelligent automation',
+    icon: Bot,
+    color: '#20B2AA',
+    details: 'Custom chatbots, AI integration, and automated customer service'
+  },
+  {
+    id: 24,
+    title: 'API Development',
+    description: 'Custom APIs and third-party integrations',
+    icon: Settings,
+    color: '#9370DB',
+    details: 'RESTful APIs, GraphQL, webhooks, and payment gateway integration'
   }
 ];
 
 const WhatICraft = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [showAll, setShowAll] = useState(false);
+
+  // Show first 16 services initially (4 rows x 4 columns)
+  const visibleServices = showAll ? services : services.slice(0, 12);
 
   return (
     <section id="services" className="py-20 px-6 relative overflow-hidden" ref={ref}>
@@ -197,7 +278,7 @@ const WhatICraft = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold mb-6 relative"
           >
-            I Craft Everything Your{' '}
+            We Craft Everything Your{' '}
             <span className="text-[#64FFDA] relative">
               Web Needs
               <motion.div
@@ -216,13 +297,13 @@ const WhatICraft = () => {
             className="text-xl text-[#A0AEC0] max-w-3xl mx-auto"
           >
             From pixel-perfect landing pages to complex web applications,
-            I deliver premium digital experiences that captivate and convert.
+            We deliver premium digital experiences that captivate and convert.
           </motion.p>
         </motion.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => {
+          {visibleServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <motion.div
@@ -299,6 +380,23 @@ const WhatICraft = () => {
             );
           })}
         </div>
+
+        {/* See More Button */}
+        {services.length > 12 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="text-center mt-12"
+          >
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-4 bg-gradient-to-r from-[#64FFDA]/20 to-[#FF6B6B]/20 border border-[#64FFDA]/30 rounded-full text-[#64FFDA] font-medium hover:from-[#64FFDA]/30 hover:to-[#FF6B6B]/30 hover:border-[#64FFDA]/50 transition-all duration-300 hover:scale-105"
+            >
+              {showAll ? 'Show Less' : `See More Services (${services.length - 12} more)`}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

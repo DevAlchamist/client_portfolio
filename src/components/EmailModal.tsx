@@ -13,39 +13,35 @@ interface EmailModalProps {
 const emailAddresses = [
   {
     id: 1,
-    name: 'General Inquiries',
-    email: 'hello@yourcompany.com',
-    description: 'General questions & project discussions',
+    name: 'Nitin',
+    email: 'nitinjha890@gmail.com',
+    description: 'Sr. Full Stack developer got a strong hand in App and Web Development',
     icon: User,
     color: '#64FFDA',
-    purpose: 'New projects & partnerships'
   },
   {
     id: 2,
-    name: 'Business & Sales',
-    email: 'business@yourcompany.com',
-    description: 'Quotes, proposals & business partnerships',
+    name: 'Shubhanshu',
+    email: 'devalchamist@gmail.com',
+    description: 'Sr. Full Stack developer Majorly Fall into building Web Applcations and flutter',
     icon: Briefcase,
     color: '#FF6B6B',
-    purpose: 'Commercial inquiries'
   },
   {
     id: 3,
-    name: 'Technical Support',
-    email: 'support@yourcompany.com',
-    description: 'Technical issues & maintenance requests',
+    name: 'Navneet',
+    email: 'navneetrubix@gmail.com',
+    description: 'Our Support and expertise ranging from Wordpress developer To PHP',
     icon: Code,
     color: '#4ECDC4',
-    purpose: 'Existing project support'
   },
   {
     id: 4,
-    name: 'Customer Service',
-    email: 'service@yourcompany.com',
-    description: 'Customer support & service inquiries',
+    name: 'Pradeep',
+    email: 'navneetrubix@gmail.com',
+    description: 'Most experienced individual in terms of industry level hands on experience',
     icon: Headphones,
     color: '#FFE66D',
-    purpose: 'Post-delivery assistance'
   }
 ];
 
@@ -53,7 +49,7 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
   const handleEmailClick = (email: string, name: string) => {
     // Track email click
     trackEmailClick(name);
-    
+
     const subject = encodeURIComponent(`Inquiry from Portfolio Website - ${name}`);
     const body = encodeURIComponent(`Hi there!\n\nI'm reaching out via your ${name} email from your portfolio website.\n\nI'd like to discuss:\n\n[Please describe your inquiry here]\n\nBest regards,\n[Your name]`);
     const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
@@ -114,12 +110,12 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <div className="flex items-start">
-                      <div 
+                      <div
                         className="p-2 rounded-lg mr-4 flex-shrink-0"
                         style={{ backgroundColor: `${contact.color}20` }}
                       >
-                        <IconComponent 
-                          className="w-5 h-5" 
+                        <IconComponent
+                          className="w-5 h-5"
                           style={{ color: contact.color }}
                         />
                       </div>
@@ -128,9 +124,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
                           <h4 className="font-medium text-white group-hover:text-[#64FFDA] transition-colors">
                             {contact.name}
                           </h4>
-                          <span className="text-xs text-[#A0AEC0] bg-[#2A2D3A] px-2 py-1 rounded">
-                            {contact.purpose}
-                          </span>
                         </div>
                         <p className="text-sm text-[#A0AEC0] mb-2">
                           {contact.description}

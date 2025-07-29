@@ -47,7 +47,7 @@ const Hero = () => {
           className="flex items-center justify-center mb-6"
         >
           <Sparkles className="w-8 h-8 text-[#64FFDA] mr-3" />
-          <span className="text-[#64FFDA] text-lg font-medium">Digital Alchemist</span>
+          <span className="text-[#64FFDA] text-lg font-medium">Buildarix</span>
         </motion.div>
 
         <motion.h1
@@ -56,10 +56,10 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-balance"
         >
-          I don&apos;t build websites.
+          We don&apos;t build websites.
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#64FFDA] to-[#FF6B6B]">
-            I craft digital experiences.
+            We craft digital experiences.
           </span>
         </motion.h1>
 
@@ -69,7 +69,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl text-[#A0AEC0] mb-12"
         >
-          React Dev | UI Engineer | Design-Driven Coder
+          Full Stack Dev | UI Engineer | Design-Driven Coder | App Dev
         </motion.p>
 
         <motion.button

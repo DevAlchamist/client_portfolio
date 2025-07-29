@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github } from 'lucide-react';
@@ -83,10 +83,19 @@ const projects = [
 const Projects = () => {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter(project => project.category === selectedCategory);
+  
+  // Show first 6 projects initially (2 rows x 3 columns)
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
+
+  // Reset showAll when category changes
+  useEffect(() => {
+    setShowAll(false);
+  }, [selectedCategory]);
 
   return (
     <section id="projects" className="py-20 px-6 bg-[#0A0C14]" ref={ref}>
@@ -122,7 +131,7 @@ const Projects = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
@@ -172,6 +181,23 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* See More Button */}
+        {filteredProjects.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-4 bg-gradient-to-r from-[#64FFDA]/20 to-[#FF6B6B]/20 border border-[#64FFDA]/30 rounded-full text-[#64FFDA] font-medium hover:from-[#64FFDA]/30 hover:to-[#FF6B6B]/30 hover:border-[#64FFDA]/50 transition-all duration-300 hover:scale-105"
+            >
+              {showAll ? 'Show Less' : `See More Projects (${filteredProjects.length - 6} more)`}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

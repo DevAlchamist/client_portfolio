@@ -260,7 +260,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold mb-6">Let&apos;s Connect</h3>
               <p className="text-[#A0AEC0] leading-relaxed mb-8">
                 Whether you have a specific project in mind or just want to explore possibilities,
-                I&apos;m here to help bring your digital dreams to life. Every great project starts with a conversation.
+                We&apos;re here to help bring your digital dreams to life. Every great project starts with a conversation.
               </p>
             </div>
 
@@ -304,7 +304,7 @@ const Contact = () => {
 
             <div className="mt-12 p-6 bg-gradient-to-r from-[#64FFDA]/10 to-[#FF6B6B]/10 rounded-lg border border-[#64FFDA]/20">
               <p className="text-[#64FFDA] font-medium mb-2">Response Time</p>
-              <p className="text-[#A0AEC0]">I typically respond within 24 hours. For urgent projects, feel free to reach out via WhatsApp.</p>
+              <p className="text-[#A0AEC0]">We typically respond within 24 hours. For urgent projects, feel free to reach out via WhatsApp.</p>
             </div>
           </motion.div>
         </div>

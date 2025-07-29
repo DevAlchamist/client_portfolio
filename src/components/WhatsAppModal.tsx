@@ -13,16 +13,16 @@ interface WhatsAppModalProps {
 const whatsappNumbers = [
   {
     id: 1,
-    name: 'Nitin - Frontend Lead',
+    name: 'Nitin - Sr. Full Stack Dev',
     number: '+91 9310176922',
-    description: 'React, Next.js & Frontend Architecture',
+    description: 'React, Next.js, Node.js & Full Stack Solutions',
     icon: User,
     color: '#64FFDA',
     availability: '9 AM - 6 PM'
   },
   {
     id: 2,
-    name: 'Shubhanshu - Full Stack',
+    name: 'Shubhanshu - Sr. Full Stack Dev',
     number: '+91 8287762253',
     description: 'Full Stack Development & API Design',
     icon: Briefcase,
@@ -31,18 +31,18 @@ const whatsappNumbers = [
   },
   {
     id: 3,
-    name: 'Navneet Kumar - Frontend',
+    name: 'Navneet Kumar - Sr. WordPress Dev',
     number: '+91 8766254833',
-    description: 'HTML, CSS, JavaScript & WordPress',
+    description: 'WordPress, Custom Themes & Plugin Development',
     icon: Phone,
     color: '#4ECDC4',
     availability: '9 AM - 7 PM'
   },
   {
     id: 4,
-    name: 'Pradeep Mahapatra - Frontend',
+    name: 'Pradeep Mahapatra - Sr. WordPress Dev',
     number: '+91 7503177590',
-    description: 'WordPress, Elementor & Responsive Design',
+    description: 'WordPress, Elementor & Performance Optimization',
     icon: Clock,
     color: '#FFE66D',
     availability: '9 AM - 6 PM'
