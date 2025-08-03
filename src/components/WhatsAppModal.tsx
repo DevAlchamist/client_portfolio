@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MessageCircle, Phone, User, Briefcase, Clock } from 'lucide-react';
+import { X, MessageCircle, User } from 'lucide-react';
 import { trackWhatsAppClick } from '@/lib/gtag';
 
 interface WhatsAppModalProps {
@@ -13,38 +13,11 @@ interface WhatsAppModalProps {
 const whatsappNumbers = [
   {
     id: 1,
-    name: 'Nitin - Sr. Full Stack Dev',
-    number: '+91 9310176922',
-    description: 'React, Next.js, Node.js & Full Stack Solutions',
+    name: 'Buildrix Team',
+    number: '+1234567890', // Update with your actual WhatsApp number
+    description: 'General inquiries & project discussions',
     icon: User,
     color: '#64FFDA',
-    availability: '9 AM - 6 PM'
-  },
-  {
-    id: 2,
-    name: 'Shubhanshu - Sr. Full Stack Dev',
-    number: '+91 8287762253',
-    description: 'Full Stack Development & API Design',
-    icon: Briefcase,
-    color: '#FF6B6B',
-    availability: '10 AM - 8 PM'
-  },
-  {
-    id: 3,
-    name: 'Navneet Kumar - Sr. WordPress Dev',
-    number: '+91 8766254833',
-    description: 'WordPress, Custom Themes & Plugin Development',
-    icon: Phone,
-    color: '#4ECDC4',
-    availability: '9 AM - 7 PM'
-  },
-  {
-    id: 4,
-    name: 'Pradeep Mahapatra - Sr. WordPress Dev',
-    number: '+91 7503177590',
-    description: 'WordPress, Elementor & Performance Optimization',
-    icon: Clock,
-    color: '#FFE66D',
     availability: '9 AM - 6 PM'
   }
 ];

@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer hexagon -->
+  <path d="M50 5 L85 25 L85 65 L50 85 L15 65 L15 25 Z" stroke="#64FFDA" stroke-width="2" fill="none"/>
+  
+  <!-- Inner geometric pattern -->
+  <path d="M35 30 L50 20 L65 30 L65 50 L50 60 L35 50 Z" fill="#64FFDA" fill-opacity="0.1" stroke="#64FFDA" stroke-width="1.5"/>
+  
+  <!-- Central "B" shape -->
+  <path d="M42 35 L42 55 M42 35 L52 35 Q57 35 57 40 Q57 45 52 45 L42 45 M42 45 L54 45 Q59 45 59 50 Q59 55 54 55 L42 55" stroke="#64FFDA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Accent dots -->
+  <circle cx="25" cy="35" r="2" fill="#64FFDA"/>
+  <circle cx="75" cy="55" r="2" fill="#64FFDA"/>
+</svg>

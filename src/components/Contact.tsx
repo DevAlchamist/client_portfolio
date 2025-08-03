@@ -6,15 +6,13 @@ import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, Mail, MessageCircle, Linkedin, CheckCircle } from 'lucide-react';
+import { Send, Mail, MessageCircle, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
-import WhatsAppModal from './WhatsAppModal';
-import EmailModal from './EmailModal';
-import { trackContactForm } from '@/lib/gtag';
+import { trackContactForm, trackWhatsAppClick, trackEmailClick } from '@/lib/gtag';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email'),
+  email: z.string().email({ message: 'Please enter a valid email' }),
   message: z.string().min(10, 'Message must be at least 10 characters')
 });
 
@@ -24,8 +22,7 @@ const Contact = () => {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+
 
   const {
     register,
@@ -35,6 +32,25 @@ const Contact = () => {
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema)
   });
+
+  const handleWhatsAppClick = () => {
+    // Track WhatsApp click
+    trackWhatsAppClick('Buildrix Team');
+
+    const message = encodeURIComponent('Hi! I\'m reaching out via your WhatsApp from your portfolio website.');
+    const whatsappUrl = `https://wa.me/8287762253?text=${message}`; // Update with actual number
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    // Track email click
+    trackEmailClick('Buildrix');
+
+    const subject = encodeURIComponent('Inquiry from Portfolio Website');
+    const body = encodeURIComponent('Hi there!\n\nI\'m reaching out via your portfolio website.\n\nI\'d like to discuss:\n\n[Please describe your inquiry here]\n\nBest regards,\n[Your name]');
+    const mailtoUrl = `mailto:buildrix@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+  };
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
@@ -265,39 +281,63 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
+              {/* Email Contact */}
               <motion.button
-                onClick={() => setIsEmailModalOpen(true)}
-                className="w-full flex items-center p-4 bg-[#1A1C26] rounded-lg border border-[#2A2D3A] hover:border-[#64FFDA]/30 transition-all duration-300 group"
+                onClick={handleEmailClick}
+                className="w-full p-4 bg-[#0F111A] border border-[#2A2D3A] rounded-lg hover:border-[#64FFDA]/30 transition-all duration-300 group text-left"
                 whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <Mail className="w-6 h-6 text-[#64FFDA] mr-4" />
-                <div>
-                  <p className="font-medium text-start">Email</p>
-                  <p className="text-[#A0AEC0] group-hover:text-[#64FFDA] transition-colors">Choose email address</p>
+                <div className="flex items-start">
+                  <div className="p-2 rounded-lg mr-4 flex-shrink-0" style={{ backgroundColor: '#64FFDA20' }}>
+                    <Mail className="w-5 h-5" style={{ color: '#64FFDA' }} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h4 className="font-medium text-white group-hover:text-[#64FFDA] transition-colors">
+                        Buildrix Team
+                      </h4>
+                      <span className="text-xs text-[#A0AEC0] bg-[#2A2D3A] px-2 py-1 rounded">
+                        24/7 Available
+                      </span>
+                    </div>
+                    <p className="text-sm text-[#A0AEC0] mb-2">
+                      General inquiries & project discussions
+                    </p>
+                    <p className="text-xs text-[#64FFDA] font-mono">
+                      buildrix@gmail.com
+                    </p>
+                  </div>
                 </div>
               </motion.button>
 
-              <motion.a
-                href="https://linkedin.com/in/yourname"
-                className="flex items-center p-4 bg-[#1A1C26] rounded-lg border border-[#2A2D3A] hover:border-[#64FFDA]/30 transition-all duration-300 group"
-                whileHover={{ scale: 1.02 }}
-              >
-                <Linkedin className="w-6 h-6 text-[#64FFDA] mr-4" />
-                <div>
-                  <p className="font-medium">LinkedIn</p>
-                  <p className="text-[#A0AEC0] group-hover:text-[#64FFDA] transition-colors">Connect with me</p>
-                </div>
-              </motion.a>
-
+              {/* WhatsApp Contact */}
               <motion.button
-                onClick={() => setIsWhatsAppModalOpen(true)}
-                className="w-full flex items-center p-4 bg-[#1A1C26] rounded-lg border border-[#2A2D3A] hover:border-[#64FFDA]/30 transition-all duration-300 group"
+                onClick={handleWhatsAppClick}
+                className="w-full p-4 bg-[#0F111A] border border-[#2A2D3A] rounded-lg hover:border-[#64FFDA]/30 transition-all duration-300 group text-left"
                 whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <MessageCircle className="w-6 h-6 text-[#64FFDA] mr-4" />
-                <div>
-                  <p className="font-medium">WhatsApp</p>
-                  <p className="text-[#A0AEC0] group-hover:text-[#64FFDA] transition-colors">Quick chat</p>
+                <div className="flex items-start">
+                  <div className="p-2 rounded-lg mr-4 flex-shrink-0" style={{ backgroundColor: '#64FFDA20' }}>
+                    <MessageCircle className="w-5 h-5" style={{ color: '#64FFDA' }} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h4 className="font-medium text-white group-hover:text-[#64FFDA] transition-colors">
+                        Buildrix Team
+                      </h4>
+                      <span className="text-xs text-[#A0AEC0] bg-[#2A2D3A] px-2 py-1 rounded">
+                        9 AM - 6 PM
+                      </span>
+                    </div>
+                    <p className="text-sm text-[#A0AEC0] mb-2">
+                      Quick chat & instant responses
+                    </p>
+                    <p className="text-xs text-[#64FFDA] font-mono">
+                      +91 8287762253
+                    </p>
+                  </div>
                 </div>
               </motion.button>
             </div>
@@ -310,17 +350,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* WhatsApp Modal */}
-      <WhatsAppModal
-        isOpen={isWhatsAppModalOpen}
-        onClose={() => setIsWhatsAppModalOpen(false)}
-      />
 
-      {/* Email Modal */}
-      <EmailModal
-        isOpen={isEmailModalOpen}
-        onClose={() => setIsEmailModalOpen(false)}
-      />
     </section>
   );
 };

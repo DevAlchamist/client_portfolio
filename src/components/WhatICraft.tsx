@@ -22,14 +22,9 @@ import {
   Play,
   Search,
   Shield,
-  Cloud,
   Headphones,
-  Gamepad2,
   Bot,
-  Briefcase,
-  TrendingUp,
-  Settings,
-  Rocket
+  Settings
 } from 'lucide-react';
 
 const services = [

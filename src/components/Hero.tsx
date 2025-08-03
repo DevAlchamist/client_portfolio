@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
+import BuildrixBrand from './BuildrixBrand';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -46,8 +47,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex items-center justify-center mb-6"
         >
-          <Sparkles className="w-8 h-8 text-[#64FFDA] mr-3" />
-          <span className="text-[#64FFDA] text-lg font-medium">Buildarix</span>
+          <BuildrixBrand size="lg" animated={true} />
         </motion.div>
 
         <motion.h1
