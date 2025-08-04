@@ -20,8 +20,9 @@ export default function Home() {
         <Contact />
 
         {/* Footer */}
-        <footer className="py-8 text-center text-[#A0AEC0] text-sm border-t border-[#1A1C26]">
-          <p>Built with Next.js, Tailwind CSS, Framer Motion | SEO Optimized | Fully Responsive</p>
+        <footer className="py-6 sm:py-8 text-center text-[#A0AEC0] text-xs sm:text-sm border-t border-[#1A1C26] px-4">
+          <p className="mb-2">Built with Next.js, Tailwind CSS, Framer Motion</p>
+          <p className="mb-2 hidden sm:block">SEO Optimized | Fully Responsive</p>
           <p className="mt-2">© 2025 - Crafted with code and caffeine ☕</p>
         </footer>
       </SmoothScroll>

@@ -105,7 +105,7 @@ const WhyChooseUsScroll = () => {
   }, [inView]);
 
   return (
-    <section className="py-16 px-6 relative overflow-hidden" ref={ref}>
+    <section className="py-12 sm:py-16 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
@@ -119,7 +119,7 @@ const WhyChooseUsScroll = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold relative inline-block"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold relative inline-block px-4"
           >
             Why Choose{' '}
             <span className="text-[#64FFDA] relative">
@@ -145,13 +145,13 @@ const WhyChooseUsScroll = () => {
           className="relative"
         >
           {/* Gradient Fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F111A] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F111A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-12 md:w-20 bg-gradient-to-r from-[#0F111A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 md:w-20 bg-gradient-to-l from-[#0F111A] to-transparent z-10 pointer-events-none" />
           
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto py-8 scrollbar-hide"
+            className="flex gap-2 sm:gap-4 overflow-x-auto py-6 sm:py-8 scrollbar-hide"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -171,7 +171,7 @@ const WhyChooseUsScroll = () => {
                 className="group relative flex-shrink-0"
               >
                 <div
-                  className="px-6 py-3 bg-[#1A1C26] border border-[#2A2D3A] rounded-full text-white font-medium text-sm whitespace-nowrap cursor-pointer transition-all duration-300 hover:scale-105 hover:border-[#64FFDA]/50 relative overflow-hidden"
+                  className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-[#1A1C26] border border-[#2A2D3A] rounded-full text-white font-medium text-xs sm:text-sm whitespace-nowrap cursor-pointer transition-all duration-300 hover:scale-105 hover:border-[#64FFDA]/50 relative overflow-hidden"
                   style={{
                     fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace'
                   }}

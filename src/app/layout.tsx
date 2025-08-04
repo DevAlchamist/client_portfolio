@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' }
+      { url: '/buildrix-logo.svg', sizes: '32x32', type: 'image/svg+xml' }
     ],
     apple: [
       { url: '/buildrix-logo.svg', sizes: '180x180', type: 'image/svg+xml' }

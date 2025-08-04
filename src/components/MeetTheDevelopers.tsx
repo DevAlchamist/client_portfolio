@@ -272,7 +272,7 @@ const MeetTheDevelopers = () => {
   };
 
   return (
-    <section id="team" className="py-20 px-6 relative overflow-hidden" ref={ref}>
+    <section id="team" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Main animated blobs */}
@@ -362,7 +362,7 @@ const MeetTheDevelopers = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold mb-6 relative"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 relative px-4"
           >
             Your Idea, Our{' '}
             <span className="text-[#64FFDA] relative">
@@ -388,7 +388,7 @@ const MeetTheDevelopers = () => {
         </motion.div>
 
         {/* Developers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {developers.map((dev, index) => {
             const IconComponent = dev.icon;
             return (
@@ -410,7 +410,7 @@ const MeetTheDevelopers = () => {
                   transitionSpeed={2000}
                   gyroscope={true}
                 >
-                  <div className="group relative bg-[#1A1C26] p-8 rounded-2xl border border-[#2A2D3A] hover:border-[#64FFDA]/50 transition-all duration-500 cursor-pointer overflow-hidden">
+                  <div className="group relative bg-[#1A1C26] p-4 sm:p-6 lg:p-8 rounded-2xl border border-[#2A2D3A] hover:border-[#64FFDA]/50 transition-all duration-500 cursor-pointer overflow-hidden">
                     {/* Hover Glow Effect */}
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
@@ -461,17 +461,19 @@ const MeetTheDevelopers = () => {
                             {dev.role}
                           </p>
                           <div className="flex items-center mt-1">
-                            <div className="flex items-center mt-1 mr-2">
-                              <Calendar className="w-4 h-4 text-[#64FFDA] mr-2" />
-                              <span className="text-sm text-[#64FFDA] font-medium">
-                                {dev.experience}
-                              </span>
-                            </div>
-                            <div className="flex items-center mt-1 ml-2">
-                              <Building className="w-4 h-4 text-[#64FFDA] mr-2" />
-                              <span className="text-sm text-[#64FFDA] font-medium">
-                                {dev.companies}
-                              </span>
+                            <div className="flex flex-col sm:flex-row sm:items-center mt-1 gap-1 sm:gap-4">
+                              <div className="flex items-center">
+                                <Calendar className="w-4 h-4 text-[#64FFDA] mr-2" />
+                                <span className="text-xs sm:text-sm text-[#64FFDA] font-medium">
+                                  {dev.experience}
+                                </span>
+                              </div>
+                              <div className="flex items-center">
+                                <Building className="w-4 h-4 text-[#64FFDA] mr-2" />
+                                <span className="text-xs sm:text-sm text-[#64FFDA] font-medium">
+                                  {dev.companies}
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -578,7 +580,7 @@ const MeetTheDevelopers = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="bg-[#1A1C26] border border-[#2A2D3A] rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-[#1A1C26] border border-[#2A2D3A] rounded-2xl p-4 sm:p-6 lg:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-6">

@@ -18,9 +18,9 @@ const BuildrixBrand: React.FC<BuildrixBrandProps> = ({
   showIcon = true 
 }) => {
   const sizeConfig = {
-    sm: { logoSize: 24, textSize: 'text-lg', spacing: 'mr-2' },
-    md: { logoSize: 32, textSize: 'text-xl', spacing: 'mr-3' },
-    lg: { logoSize: 40, textSize: 'text-2xl', spacing: 'mr-4' }
+    sm: { logoSize: 20, textSize: 'text-base sm:text-lg', spacing: 'mr-2' },
+    md: { logoSize: 28, textSize: 'text-lg sm:text-xl', spacing: 'mr-2 sm:mr-3' },
+    lg: { logoSize: 32, textSize: 'text-xl sm:text-2xl', spacing: 'mr-3 sm:mr-4' }
   };
 
   const config = sizeConfig[size];

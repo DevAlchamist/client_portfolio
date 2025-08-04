@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import {
@@ -198,7 +198,7 @@ const WhatICraft = () => {
   const visibleServices = showAll ? services : services.slice(0, 12);
 
   return (
-    <section id="services" className="py-20 px-6 relative overflow-hidden" ref={ref}>
+    <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
       {/* Floating Particles Background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -271,10 +271,10 @@ const WhatICraft = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold mb-6 relative"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 relative px-4"
           >
             We Craft Everything Your{' '}
-            <span className="text-[#64FFDA] relative">
+            <span className="text-[#64FFDA] relative block sm:inline">
               Web Needs
               <motion.div
                 initial={{ width: 0 }}
@@ -297,7 +297,7 @@ const WhatICraft = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-0">
           {visibleServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -319,7 +319,7 @@ const WhatICraft = () => {
                   transitionSpeed={2000}
                   gyroscope={true}
                 >
-                  <div className="group relative bg-[#1A1C26] p-6 rounded-2xl border border-[#2A2D3A] hover:border-[#64FFDA]/50 transition-all duration-500 h-full cursor-pointer overflow-hidden">
+                  <div className="group relative bg-[#1A1C26] p-4 sm:p-6 rounded-2xl border border-[#2A2D3A] hover:border-[#64FFDA]/50 transition-all duration-500 h-full cursor-pointer overflow-hidden">
                     {/* Hover Glow Effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#64FFDA]/5 to-[#FF6B6B]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

@@ -150,7 +150,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 relative overflow-hidden" ref={ref}>
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
       {/* Background decoration */}
       <div className="absolute inset-0">
         <motion.div
@@ -174,21 +174,21 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 px-4">
             Tell Me What&apos;s <span className="text-[#64FFDA]">On Your Mind</span>
           </h2>
-          <p className="text-xl text-[#A0AEC0] max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-[#A0AEC0] max-w-2xl mx-auto px-4">
             Ready to turn your vision into reality? Let&apos;s brew something magical together.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 px-2 sm:px-0">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-[#1A1C26] p-8 rounded-2xl border border-[#2A2D3A]"
+            className="bg-[#1A1C26] p-6 sm:p-8 rounded-2xl border border-[#2A2D3A]"
           >
             {isSubmitted ? (
               <motion.div

@@ -98,7 +98,7 @@ const Projects = () => {
   }, [selectedCategory]);
 
   return (
-    <section id="projects" className="py-20 px-6 bg-[#0A0C14]" ref={ref}>
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-[#0A0C14]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -106,20 +106,20 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 px-4">
             Featured <span className="text-[#64FFDA]">Projects</span>
           </h2>
-          <p className="text-xl text-[#A0AEC0] max-w-2xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-[#A0AEC0] max-w-2xl mx-auto mb-8 px-4">
             Each project tells a story of problem-solving, creativity, and technical excellence.
           </p>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4">
             {projects.map((data,index) => (
               <button
                 key={index}
                 onClick={() => setSelectedCategory(data.category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${selectedCategory === data.category
+                className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full font-medium transition-all duration-300 ${selectedCategory === data.category
                   ? 'bg-[#64FFDA] text-[#0F111A]'
                   : 'bg-[#1A1C26] text-[#A0AEC0] hover:bg-[#252831] hover:text-white'
                   }`}
@@ -130,7 +130,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {visibleProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -164,9 +164,9 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-[#A0AEC0] mb-4 leading-relaxed">{project.description}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-[#A0AEC0] mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span

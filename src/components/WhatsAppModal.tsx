@@ -48,7 +48,7 @@ const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="bg-[#1A1C26] border border-[#2A2D3A] rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto"
+            className="bg-[#1A1C26] border border-[#2A2D3A] rounded-2xl p-4 sm:p-6 lg:p-8 max-w-md w-full max-h-[90vh] overflow-y-auto mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -81,7 +81,7 @@ const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose }) => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handleWhatsAppClick(contact.number, contact.name)}
-                    className="w-full p-4 bg-[#0F111A] border border-[#2A2D3A] rounded-lg hover:border-[#64FFDA]/30 transition-all duration-300 group text-left"
+                    className="w-full p-3 sm:p-4 bg-[#0F111A] border border-[#2A2D3A] rounded-lg hover:border-[#64FFDA]/30 transition-all duration-300 group text-left"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
