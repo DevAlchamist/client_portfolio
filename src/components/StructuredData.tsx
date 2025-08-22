@@ -9,9 +9,9 @@ const StructuredData = () => {
     "name": "Buildrix",
     "alternateName": "Buildrix Development Team",
     "description": "Expert full-stack development team crafting digital experiences with React, Next.js, WordPress, and modern web technologies.",
-    "url": "https://buildrix.com",
-    "logo": "https://buildrix.com/buildrix-logo.svg",
-    "image": "https://buildrix.com/images/buildrix-site.png",
+    "url": "https://buildrix.co",
+    "logo": "https://buildrix.co/images/logo.png",
+    "image": "https://buildrix.co/images/buildrix-site.png",
     "email": "buildrix@gmail.com",
     "foundingDate": "2024",
     "address": {
@@ -46,7 +46,7 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Buildrix",
-    "url": "https://buildrix.com",
+    "url": "https://buildrix.co",
     "description": "Premium web development and digital solutions by expert full-stack development team",
     "publisher": {
       "@type": "Organization",
@@ -54,7 +54,7 @@ const StructuredData = () => {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://buildrix.com/?search={search_term_string}",
+      "target": "https://buildrix.co/?search={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
