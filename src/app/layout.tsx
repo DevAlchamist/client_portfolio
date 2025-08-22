@@ -1,65 +1,77 @@
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import ToastProvider from '@/components/ToastProvider';
-import GoogleAnalyticsScript from '@/components/GoogleAnalyticsScript';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-import StructuredData from '@/components/StructuredData';
-import { GA_MEASUREMENT_ID } from '@/lib/gtag';
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import ToastProvider from "@/components/ToastProvider";
+import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import StructuredData from "@/components/StructuredData";
+import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: 'Buildrix - Premium Web Development & Digital Solutions',
-  description: "We don't build websites. We craft digital experiences. Expert full-stack development team specializing in React, Next.js, WordPress, and modern web applications. Transform your vision into reality with Buildrix.",
+  title: "Buildrix - Premium Web Development & Digital Solutions",
+  description:
+    "We don't build websites. We craft digital experiences. Expert full-stack development team specializing in React, Next.js, WordPress, and modern web applications. Transform your vision into reality with Buildrix.",
   keywords: [
-    'Web Development', 'React Developer', 'Next.js', 'Full Stack Development',
-    'WordPress Development', 'UI/UX Design', 'Mobile App Development',
-    'Digital Solutions', 'Custom Web Applications', 'E-commerce Development',
-    'Buildrix', 'Professional Web Services', 'Modern Web Technologies'
+    "Web Development",
+    "React Developer",
+    "Next.js",
+    "Full Stack Development",
+    "WordPress Development",
+    "UI/UX Design",
+    "Mobile App Development",
+    "Digital Solutions",
+    "Custom Web Applications",
+    "E-commerce Development",
+    "Buildrix",
+    "Professional Web Services",
+    "Modern Web Technologies",
   ],
-  authors: [{ name: 'Buildrix Team' }],
-  creator: 'Buildrix',
-  publisher: 'Buildrix',
+  authors: [{ name: "Buildrix Team" }],
+  creator: "Buildrix",
+  publisher: "Buildrix",
   openGraph: {
-    title: 'Buildrix - Premium Web Development & Digital Solutions',
-    description: 'Expert full-stack development team crafting digital experiences with React, Next.js, WordPress, and modern web technologies. Contact us at buildrix@gmail.com',
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://buildrix.com',
-    siteName: 'Buildrix',
+    title: "Buildrix - Premium Web Development & Digital Solutions",
+    description:
+      "Expert full-stack development team crafting digital experiences with React, Next.js, WordPress, and modern web technologies. Contact us at buildrix@gmail.com",
+    type: "website",
+    locale: "en_US",
+    url: "https://buildrix.co",
+    siteName: "Buildrix",
     images: [
       {
-        url: '/images/buildrix-site.png',
+        url: "/images/buildrix-site.png",
         width: 1200,
         height: 630,
-        alt: 'Buildrix - Premium Web Development Team',
-        type: 'image/png',
+        alt: "Buildrix - Premium Web Development Team",
+        type: "images/png",
       },
       {
-        url: '/buildrix-logo.svg',
+        url: "/buildrix-logo.svg",
         width: 200,
         height: 200,
-        alt: 'Buildrix Logo',
-        type: 'image/svg+xml',
-      }
+        alt: "Buildrix Logo",
+        type: "image/svg+xml",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Buildrix - Premium Web Development & Digital Solutions',
-    description: 'Expert full-stack development team crafting digital experiences with modern web technologies.',
-    images: ['/images/buildrix-site.png'],
-    creator: '@buildrix',
-    site: '@buildrix',
+    card: "summary_large_image",
+    title: "Buildrix - Premium Web Development & Digital Solutions",
+    description:
+      "Expert full-stack development team crafting digital experiences with modern web technologies.",
+    images: ["/images/buildrix-site.png"],
+    creator: "@buildrix",
+    site: "@buildrix",
   },
   alternates: {
-    canonical: 'https://buildrix.com',
+    canonical: "https://buildrix.co",
   },
 
   robots: {
@@ -68,25 +80,27 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/buildrix-logo.svg', sizes: '32x32', type: 'image/svg+xml' }
+      { url: "/favicon.svg" },
+      { url: "/images/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/logo.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: '/buildrix-logo.svg', sizes: '180x180', type: 'image/svg+xml' }
+      { url: "/images/logo.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  manifest: '/manifest.json',
+
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -97,9 +111,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {GA_MEASUREMENT_ID && <GoogleAnalyticsScript GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        {GA_MEASUREMENT_ID && (
+          <GoogleAnalyticsScript GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
+        )}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             /* Hide scrollbar for webkit browsers */
             ::-webkit-scrollbar {
               width: 8px;
@@ -131,10 +148,12 @@ export default function RootLayout({
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
             }
-          `
-        }} />
-        <script dangerouslySetInnerHTML={{
-          __html: `
+          `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             // Console easter egg
             console.log(\`
               �  Hey there, curious developer!
@@ -152,12 +171,17 @@ export default function RootLayout({
               
               - The Buildrix Team ⚡
             \`);
-          `
-        }} />
+          `,
+          }}
+        />
       </head>
-      <body className={`${inter.className} bg-[#0F111A] text-white overflow-x-hidden`}>
+      <body
+        className={`${inter.className} bg-[#0F111A] text-white overflow-x-hidden`}
+      >
         <StructuredData />
-        {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
+        {GA_MEASUREMENT_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
+        )}
         {children}
         <ToastProvider />
       </body>
