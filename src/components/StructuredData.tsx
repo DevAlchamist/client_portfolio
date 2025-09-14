@@ -12,7 +12,7 @@ const StructuredData = () => {
     "url": "https://buildrix.co",
     "logo": "https://buildrix.co/images/logo.png",
     "image": "https://buildrix.co/images/buildrix-site.png",
-    "email": "buildrix@gmail.com",
+    "email": "buildarix@gmail.com",
     "foundingDate": "2024",
     "address": {
       "@type": "PostalAddress",
@@ -22,7 +22,7 @@ const StructuredData = () => {
       "@type": "ContactPoint",
       "telephone": "+1234567890",
       "contactType": "customer service",
-      "email": "buildrix@gmail.com",
+      "email": "buildarix@gmail.com",
       "availableLanguage": ["English"]
     },
     "sameAs": [

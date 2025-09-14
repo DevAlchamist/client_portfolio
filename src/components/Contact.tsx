@@ -48,7 +48,7 @@ const Contact = () => {
 
     const subject = encodeURIComponent('Inquiry from Portfolio Website');
     const body = encodeURIComponent('Hi there!\n\nI\'m reaching out via your portfolio website.\n\nI\'d like to discuss:\n\n[Please describe your inquiry here]\n\nBest regards,\n[Your name]');
-    const mailtoUrl = `mailto:buildrix@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:buildarix@gmail.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoUrl;
   };
 
@@ -305,7 +305,7 @@ const Contact = () => {
                       General inquiries & project discussions
                     </p>
                     <p className="text-xs text-[#64FFDA] font-mono">
-                      buildrix@gmail.com
+                      buildarix@gmail.com
                     </p>
                   </div>
                 </div>

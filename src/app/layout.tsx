@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Buildrix - Premium Web Development & Digital Solutions",
     description:
-      "Expert full-stack development team crafting digital experiences with React, Next.js, WordPress, and modern web technologies. Contact us at buildrix@gmail.com",
+      "Expert full-stack development team crafting digital experiences with React, Next.js, WordPress, and modern web technologies. Contact us at buildarix@gmail.com",
     type: "website",
     locale: "en_US",
     url: "https://buildrix.co",
@@ -166,7 +166,7 @@ export default function RootLayout({
               Instead of digging through code,
               why don't we build something amazing together?
               
-              💌 Contact us: buildrix@gmail.com
+              💌 Contact us: buildarix@gmail.com
               🌐 Website: https://buildrix.com
               
               - The Buildrix Team ⚡
