@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f0f10"/>
+      <stop offset="1" stop-color="#1a1a1c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#6e7e91" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#c2a27c" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="980" fill="url(#bg)"/>
+  <rect x="120" y="120" width="1160" height="740" rx="24" fill="#101011" stroke="rgba(110,126,145,0.25)" stroke-width="2"/>
+  <path d="M120 720 C 420 640, 720 820, 1280 640 L 1280 860 L 120 860 Z" fill="url(#accent)"/>
+  <text x="170" y="260" fill="#e8e6e3" font-family="ui-sans-serif, system-ui, -apple-system" font-size="64" font-weight="800" letter-spacing="-0.02em">
+    Tiny Popper
+  </text>
+  <text x="170" y="320" fill="rgba(232,230,227,0.72)" font-family="ui-sans-serif, system-ui, -apple-system" font-size="24">
+    E-commerce commission
+  </text>
+  <text x="170" y="820" fill="rgba(232,230,227,0.75)" font-family="ui-sans-serif, system-ui, -apple-system" font-size="18">
+    Image placeholder  replace with final screenshot.
+  </text>
+</svg>
+

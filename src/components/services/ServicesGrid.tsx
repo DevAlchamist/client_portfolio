@@ -213,40 +213,6 @@ export default function ServicesGrid() {
           </div>
         </div>
       </motion.article>
-
-      <motion.div
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-        variants={rowReveal}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.08 }}
-      >
-        {servicesShowcase.map((item, index) => {
-          const Icon = showcaseIcons[item.icon];
-          return (
-            <motion.article
-              key={item.title}
-              variants={slabItem}
-              transition={{ delay: reduce ? 0 : index * 0.05 }}
-              className="flex flex-col rounded-lg border border-buildrix-steel/15 border-l-[3px] bg-buildrix-surface/80 p-6 shadow-buildrix-subtle sm:p-8"
-              style={{ borderLeftColor: item.color }}
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-md border border-buildrix-steel/20 bg-buildrix-base/50">
-                <Icon className="h-5 w-5 text-buildrix-clay" aria-hidden />
-              </span>
-              <h2 className="mt-5 text-base font-semibold tracking-[-0.02em] text-buildrix-ivory sm:text-lg">
-                {item.title}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-buildrix-steel">
-                {item.description}
-              </p>
-              <p className="mt-4 flex-1 text-xs leading-relaxed text-buildrix-steel/85 sm:text-sm">
-                {item.details}
-              </p>
-            </motion.article>
-          );
-        })}
-      </motion.div>
     </div>
   );
 }

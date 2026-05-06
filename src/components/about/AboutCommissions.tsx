@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { aboutCommissions } from '@/data/about-page';
+import { commissions } from '@/data/commissions';
 import {
   Reveal,
   fadeUpItem,
@@ -48,7 +48,7 @@ export default function AboutCommissions() {
             viewport={{ once: true, amount: 0.06, margin: '0px 0px -8% 0px' }}
             variants={staggerContainer(0.12, 0.05)}
           >
-            {aboutCommissions.map((item, i) => (
+            {commissions.map((item, i) => (
               <motion.article
                 key={item.id}
                 variants={fadeUpItem}

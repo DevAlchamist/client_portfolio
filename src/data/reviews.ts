@@ -16,22 +16,22 @@ export const reviews: Review[] = [
   {
     id: '1',
     quote:
-      'They approached our platform like structural engineers—every decision traced back to load-bearing clarity.',
-    name: 'Elena Vasquez',
-    role: 'Director of Product, Nexus Capital Hub',
+      'The storefront feels premium and fast. Our team is genuinely satisfied with the build quality and the conversion-focused flow.',
+    name: 'Tiny Popper',
+    role: 'E-commerce client',
   },
   {
     id: '2',
     quote:
-      'Quiet interfaces with uncompromising logic. Our stakeholders finally stopped confusing polish with purpose.',
-    name: 'Marcus Chen',
-    role: 'CTO, Velo Engine',
+      'Excellent work—accessible, calm, and trustworthy. The experience helps our users feel safe from the first interaction.',
+    name: 'Apna Healer',
+    role: 'Mental Health NGO',
   },
   {
     id: '3',
     quote:
-      'The handoff was architectural: blueprints, constraints, and a build that has not buckled under scale.',
-    name: 'Sofia Al-Masri',
-    role: 'Head of Digital, Aurora Labs',
+      'A disciplined handoff: clear structure, clean components, and measurable performance. The build holds under real traffic.',
+    name: 'Client Review',
+    role: 'Reference account',
   },
 ];
