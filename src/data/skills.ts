@@ -1,0 +1,48 @@
+export type SkillChip = {
+  name: string;
+  color: string;
+};
+
+/** Technology / stack chips (formerly the methodology marquee list). */
+export const skills: SkillChip[] = [
+  { name: 'React.js', color: '#61DAFB' },
+  { name: 'Next.js', color: '#000000' },
+  { name: 'TypeScript', color: '#3178C6' },
+  { name: 'Tailwind CSS', color: '#06B6D4' },
+  { name: 'Framer Motion', color: '#FF0055' },
+  { name: 'Firebase', color: '#FFCA28' },
+  { name: 'MongoDB', color: '#47A248' },
+  { name: 'AWS', color: '#FF9900' },
+  { name: 'EC2', color: '#FF9900' },
+  { name: 'Lambda', color: '#FF9900' },
+  { name: 'S3', color: '#569A31' },
+  { name: 'DynamoDB', color: '#4053D6' },
+  { name: 'Node.js', color: '#339933' },
+  { name: 'Express.js', color: '#000000' },
+  { name: 'AdminJS', color: '#64FFDA' },
+  { name: 'Docker', color: '#2496ED' },
+  { name: 'Vite', color: '#646CFF' },
+  { name: 'WordPress', color: '#21759B' },
+  { name: 'PHP', color: '#777BB4' },
+  { name: 'SEO', color: '#4285F4' },
+  { name: 'GraphQL', color: '#E10098' },
+  { name: 'GitHub', color: '#181717' },
+  { name: 'REST API', color: '#FF6B6B' },
+  { name: 'TWA', color: '#4ECDC4' },
+  { name: 'PWA', color: '#5A0FC8' },
+  { name: 'PostgreSQL', color: '#336791' },
+  { name: 'Webhooks', color: '#FFE66D' },
+  { name: 'Stripe', color: '#635BFF' },
+  { name: 'Google APIs', color: '#4285F4' },
+  { name: 'Shopify', color: '#7AB55C' },
+  { name: 'Vercel', color: '#000000' },
+  { name: 'NGINX', color: '#009639' },
+  { name: 'Redis', color: '#DC382D' },
+  { name: 'Zustand', color: '#FF6B6B' },
+  { name: 'Vue.js', color: '#4FC08D' },
+  { name: 'Prisma', color: '#2D3748' },
+  { name: 'MySQL', color: '#4479A1' },
+  { name: 'Headless UI', color: '#64FFDA' },
+  { name: 'Material UI', color: '#007FFF' },
+  { name: 'Chakra UI', color: '#319795' },
+];

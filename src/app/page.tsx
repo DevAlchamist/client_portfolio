@@ -1,31 +1,25 @@
-import Hero from '@/components/Hero';
-import WhatICraft from '@/components/WhatICraft';
-import WhyChooseUsScroll from '@/components/WhyChooseUsScroll';
-import MeetTheDevelopers from '@/components/MeetTheDevelopers';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
-import CustomCursor from '@/components/CustomCursor';
-import SmoothScroll from '@/components/SmoothScroll';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HeroSection from '@/components/HeroSection';
+import CapabilitiesSlabs from '@/components/CapabilitiesSlabs';
+import SelectedBlueprints from '@/components/SelectedBlueprints';
+import MethodologySection from '@/components/MethodologySection';
+import ReviewsSection from '@/components/ReviewsSection';
+import ContactSection from '@/components/ContactSection';
 
 export default function Home() {
   return (
-    <main className="bg-[#0F111A] text-white overflow-x-hidden">
-      <CustomCursor />
-      <SmoothScroll>
-        <Hero />
-        <WhatICraft />
-        <Projects />
-        <WhyChooseUsScroll />
-        <MeetTheDevelopers />
-        <Contact />
-
-        {/* Footer */}
-        <footer className="py-6 sm:py-8 text-center text-[#A0AEC0] text-xs sm:text-sm border-t border-[#1A1C26] px-4">
-          <p className="mb-2">Built with Next.js, Tailwind CSS, Framer Motion</p>
-          <p className="mb-2 hidden sm:block">SEO Optimized | Fully Responsive</p>
-          <p className="mt-2">© 2025 - Crafted with code and caffeine ☕</p>
-        </footer>
-      </SmoothScroll>
+    <main className="flex min-h-screen flex-col overflow-x-hidden bg-buildrix-base text-buildrix-ivory">
+      <Navbar className="fixed left-0 right-0 top-0 z-[100]" />
+      <div className="flex min-h-0 flex-1 flex-col pt-[4.5rem]">
+        <HeroSection />
+        <CapabilitiesSlabs />
+        <SelectedBlueprints />
+        <MethodologySection />
+        <ReviewsSection />
+        <ContactSection />
+        <Footer className="mt-auto" />
+      </div>
     </main>
   );
 }

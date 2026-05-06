@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
+/*
+ * Buildrix — Structural Modernism
+ * Digital architecture studio: depth, silence, warm stone/clay palette.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette */
+  --buildrix-base: #0f0f10;
+  --buildrix-surface: #1a1a1c;
+  --buildrix-clay: #c2a27c;
+  --buildrix-steel: #6e7e91;
+  --buildrix-ivory: #e8e6e3;
+
+  /* Semantic */
+  --background: var(--buildrix-base);
+  --foreground: var(--buildrix-ivory);
+
+  /* Motion — weight-based construction */
+  --buildrix-ease: cubic-bezier(0.2, 0, 0, 1);
+  --buildrix-duration: 400ms;
+
+  /* Depth — soft shadow, no glow */
+  --shadow-panel: 0 28px 56px -16px rgba(0, 0, 0, 0.45),
+    0 12px 24px -12px rgba(0, 0, 0, 0.28);
+  --shadow-subtle: 0 8px 24px -8px rgba(0, 0, 0, 0.35);
+
+  /* Grain (SVG noise tile) */
+  --buildrix-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @theme inline {
+  --color-buildrix-base: var(--buildrix-base);
+  --color-buildrix-surface: var(--buildrix-surface);
+  --color-buildrix-clay: var(--buildrix-clay);
+  --color-buildrix-steel: var(--buildrix-steel);
+  --color-buildrix-ivory: var(--buildrix-ivory);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-buildrix-panel: var(--shadow-panel);
+  --shadow-buildrix-subtle: var(--shadow-subtle);
+
+  --ease-buildrix: cubic-bezier(0.2, 0, 0, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: var(--ease-buildrix);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-buildrix-base text-buildrix-ivory font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-[-0.02em] text-buildrix-ivory;
+    line-height: 1.15;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-metadata {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .transition-buildrix {
+    transition-duration: var(--buildrix-duration);
+    transition-timing-function: var(--buildrix-ease);
+  }
 }

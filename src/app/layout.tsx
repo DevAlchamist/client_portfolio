@@ -1,13 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import ToastProvider from "@/components/ToastProvider";
 import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import StructuredData from "@/components/StructuredData";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -109,7 +113,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={manrope.variable}>
       <head>
         {GA_MEASUREMENT_ID && (
           <GoogleAnalyticsScript GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
@@ -122,25 +126,19 @@ export default function RootLayout({
               width: 8px;
             }
             ::-webkit-scrollbar-track {
-              background: #0F111A;
+              background: #0F0F10;
             }
             ::-webkit-scrollbar-thumb {
-              background: #64FFDA;
+              background: #6E7E91;
               border-radius: 4px;
             }
             ::-webkit-scrollbar-thumb:hover {
-              background: #4FD1C7;
+              background: #C2A27C;
             }
             
-            /* Custom cursor styles */
-            * {
-              cursor: none !important;
-            }
-            
-            /* Selection styles */
             ::selection {
-              background: #64FFDA;
-              color: #0F111A;
+              background: #C2A27C;
+              color: #0F0F10;
             }
             
             /* Smooth font rendering */
@@ -175,15 +173,18 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${inter.className} bg-[#0F111A] text-white overflow-x-hidden`}
-      >
-        <StructuredData />
-        {GA_MEASUREMENT_ID && (
-          <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
-        )}
-        {children}
-        <ToastProvider />
+      <body className="relative min-h-screen overflow-x-hidden bg-buildrix-base text-buildrix-ivory">
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 z-[1] bg-[length:280px_280px] bg-repeat opacity-[0.05] [background-image:var(--buildrix-grain)]"
+        />
+        <div className="relative z-10">
+          <StructuredData />
+          {GA_MEASUREMENT_ID && (
+            <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
+          )}
+          {children}
+        </div>
       </body>
     </html>
   );
