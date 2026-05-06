@@ -23,12 +23,12 @@ export default function HomeProjects() {
         transition={{ duration: reduce ? 0 : 0.7, ease: EASE_BUILDRIX }}
       >
         <h2 className="text-metadata text-buildrix-steel">Selected Projects</h2>
-        <a
+        <Link
           href="/work"
           className="text-sm font-medium tracking-wide text-buildrix-clay transition-buildrix sm:text-right"
         >
           Slide to explore <span aria-hidden>→</span>
-        </a>
+        </Link>
       </motion.div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
